@@ -224,6 +224,33 @@ if(score &lt; 200){
     <event eventtype="7" enumb="5">
       <action>
         <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if score &gt; global.highscore // If the current score is higher than the previously saved high score
+{
+global.highscore = score; // set global.highscore to the NEW high score
+ini_open("score.ini"); // OPen the ini file
+ini_write_real("score","highscore",global.highscore); // Write the new value
+ini_close(); // Close the ini file
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>203</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -324,7 +351,7 @@ if(score &lt; 200){
         <arguments>
           <argument>
             <kind>0</kind>
-            <string>0</string>
+            <string>160</string>
           </argument>
           <argument>
             <kind>0</kind>
